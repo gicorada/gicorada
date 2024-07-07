@@ -13,9 +13,20 @@ a:hover {
 }
 
 footer {
-	position: fixed;
+	position: sticky;
 	bottom: 0;
 	width: 100%;
+
+	background-color:  #131824;
+}
+
+footer p {
+	padding: 10px;
+}
+
+header {
+	position: sticky;
+	top: 10px;
 }
 
 main {
@@ -35,6 +46,10 @@ header li {
 
 footer p {
 	text-align: center;
+}
+
+h1 {
+	font-size: 2em;
 }
 
 
