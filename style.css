@@ -1,0 +1,63 @@
+body{
+	font-family: "Consolas", "Monaco", "Lucida Console", "Courier New", Courier, monospace;
+	background-color: rgb(19, 24, 36);
+	color: white;
+}
+
+a {
+	color: skyblue;
+	text-decoration: none;
+}
+a:hover {
+	color: lightblue;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+main {
+	width: 50%;
+	margin: 0 auto;
+}
+
+header ul {
+	text-align: center;
+	list-style-type: none;
+}
+
+header li {
+	display: inline;
+	margin-right: 10px;
+}
+
+footer p {
+	text-align: center;
+}
+
+
+
+h1::before {
+	content: "# ";
+}
+
+h2::before {
+	content: "## ";
+}
+
+h3::before {
+	content: "### ";
+}
+
+.mini {
+	font-size: 0.8em;
+}
+
+.emoji {
+	width: 1em;
+  	height: 1em;
+  	object-fit: contain;
+  	overflow: hidden;
+}
