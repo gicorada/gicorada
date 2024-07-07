@@ -26,7 +26,9 @@ footer p {
 
 header {
 	position: sticky;
-	top: 10px;
+	top: 0;
+
+	background-color:  #131824;
 }
 
 main {
@@ -35,6 +37,7 @@ main {
 }
 
 header ul {
+	padding: 10px;
 	text-align: center;
 	list-style-type: none;
 }

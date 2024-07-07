@@ -10,7 +10,7 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a href="#">Home (sì, per ora c'è solo questa)</a></li>
+				<li><a href="#">Home <span class="mini">(sì, per ora c'è solo questa pagina)</span></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -34,7 +34,7 @@
 			</div>
 			<div>
 				<h2>TempQR (2024-)</h2>
-				<p>Applicazione open-source per la creazione e validazione di qr code (pensato per eventi, o situazioni simili, in cui è necessario un sistema di validazione semplice e gratuito)</p>
+				<p><a href="https://github.com/gicorada/tempqr" target="_blank">Applicazione open-source</a> per la creazione e validazione di qr code (pensato per eventi, o situazioni simili, in cui è necessario un sistema di validazione semplice e gratuito)</p>
 				<p>Ho creato questa applicazione principalmente per partecipare ad <a href="https://hackclub.com/arcade/" target="_blank">HackClub Arcade</a><span class="mini"> ma l'idea l'avevo da prima</span></p>
 			</div>
 			<div>
@@ -47,12 +47,47 @@
 			</div>
 		</section>
 		<section>
-			<h1>Contact</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.</p>
+			<h1>Altre info su di me</h1>
+			<p>Lingue: 🇮🇹 (nativo), 🇬🇧 (B2, grade B)</p>
+			<p>Musica preferita: ascolto dai cantautori italiani alla musica nightcore, guarda il <a href="https://www.last.fm/user/GR200">mio profilo last.fm</a> per sapere i miei gusti più recenti. <span id="music"></span></p>
+			<p>Nei mesi di maggio-giugno 2024 ho passato un mese a Dublino con il progetto Erasmus+</p>
 		</section>
 	</main>
 	<footer>
 		<p>GicoRada - 2024</p>
 	</footer>
+
+
+
+	<script>
+		// Thank you https://github.com/aristada
+
+		// get your own last.fm api key from https://www.last.fm/api/account/create
+		LASTFM_API_KEY = "45faf84cf916578cf693244e5cfe2d0b"
+		username = "GR200"
+		STRING_ID = "music"
+		url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&format=json&api_key=" + LASTFM_API_KEY + "&limit=1&user=" + username
+
+		// make API call
+		const fetchURL = async (url) => {
+			var response = await fetch(url);
+			return response.json();
+		}
+
+		const updateNowPlaying = async () => {
+			var json = await fetchURL(url);
+			var last_track = json.recenttracks.track[0];
+			var track = last_track.name;
+			var trackLink = last_track.url;
+			var artist = last_track.artist['#text'];
+
+			var now_playing = (last_track["@attr"] == undefined) ? false : true;
+
+			var html = document.getElementById(STRING_ID);
+			html.innerHTML = (now_playing ? "In questo momento sto ascoltando " : "L'ultima canzone che ho ascoltato è ") + "\"" + track + "\" - \"" + artist + "\"" ;
+		}
+
+		updateNowPlaying();
+	</script>
 </body>
 </html>
