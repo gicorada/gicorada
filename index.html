@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="./style.css" rel="stylesheet"></link>
-	<title>GicoRada homepage</title>
+	<title>GicoRada homepage - IT</title>
 </head>
 <body>
 	<header>
@@ -26,6 +26,7 @@
 				<li>faccio wardriving utilizzando <a href="https://wigle.net/" target="_blank">WiGLE</a> per mappare Wi-Fi e BT nella mia zona</li>
 			</ul>
 		</section>
+
 		<section>
 			<h1>Progetti</h1>
 			<div>
@@ -46,52 +47,37 @@
 				<p>Gruppo di lettura per ragazzi, partecipo fin dal primo incontro, e ho creato il <a href="https://booksheartbrain.it/" target="_blank">sito</a> per il gruppo<span class="mini"> (ma non lo aggiorno da quasi un anno 🙃)</span></p>
 			</div>
 		</section>
+
 		<section>
 			<h1>Altre info su di me</h1>
 			<p>Lingue: 🇮🇹 (nativo), 🇬🇧 (B2, grade B)</p>
-			<p>Musica preferita: ascolto dai cantautori italiani alla musica nightcore, guarda il <a href="https://www.last.fm/user/GR200">mio profilo last.fm</a> per sapere i miei gusti più recenti. <span id="music"></span></p>
+			<p>Musica preferita: ascolto dai cantautori italiani alla musica nightcore, guarda il <a href="https://www.last.fm/user/GR200" target="_blank">mio profilo last.fm</a> per sapere i miei gusti più recenti. <span id="music"></span></p>
 			<p>Nei mesi di maggio-giugno 2024 ho passato un mese a Dublino con il progetto Erasmus+</p>
+		</section>
+
+		<section>
+			<h1>Dove puoi trovarmi</h1>
+			<p>Se trovi su internet qualcuno con il nome utente gicorada, allora è molto probabile che sia io (ho account un po' dappertutto)</p>
+			<p>Telegram: <a href="https://t.me/gicorada" target="_blank">@gicorada</a></p>
+			<p>Fediverso: <a href="https://mastodon.uno/@gicorada" target="_blank">@gicorada@mastodon.uno</a></p>
+			<p>Matrix: <a href="https://matrix.to/#/@gicorada:matrix.org" target="_blank">@gicorada:matrix.org</a></p>
+			<p>Github: <a href="https://github.com/gicorada/" target="_blank">gicorada</a></p>
+			<p>Mail: La trovi nel mio profilo Github</p>
+			<p class="mini">(se vuoi verificare questi profili, visita la mia <a href="https://keyoxide.org/gradaellig@protonmail.com" target="_blank">pagina keyoxide</a>)</p>
 		</section>
 	</main>
 	<footer>
-		<p>GicoRada - 
+		<p>
+			GicoRada
+			- 
 			<a href="https://fediring.net/previous?host=gicorada.is-a.dev">←</a>
 			<a href="https://fediring.net/">Fediring</a>
 			<a href="https://fediring.net/next?host=gicorada.is-a.dev">→</a>
+			-
+			<a href="./en/index.html">🇬🇧</a>
 		</p>
 	</footer>
 
-
-
-	<script>
-		// Thank you https://github.com/aristada
-
-		// get your own last.fm api key from https://www.last.fm/api/account/create
-		LASTFM_API_KEY = "45faf84cf916578cf693244e5cfe2d0b"
-		username = "GR200"
-		STRING_ID = "music"
-		url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&format=json&api_key=" + LASTFM_API_KEY + "&limit=1&user=" + username
-
-		// make API call
-		const fetchURL = async (url) => {
-			var response = await fetch(url);
-			return response.json();
-		}
-
-		const updateNowPlaying = async () => {
-			var json = await fetchURL(url);
-			var last_track = json.recenttracks.track[0];
-			var track = last_track.name;
-			var trackLink = last_track.url;
-			var artist = last_track.artist['#text'];
-
-			var now_playing = (last_track["@attr"] == undefined) ? false : true;
-
-			var html = document.getElementById(STRING_ID);
-			html.innerHTML = (now_playing ? "In questo momento sto ascoltando " : "L'ultima canzone che ho ascoltato è ") + "\"" + track + "\" - \"" + artist + "\"" ;
-		}
-
-		updateNowPlaying();
-	</script>
+	<script src="./nowPlaying.js"></script>
 </body>
 </html>
