@@ -4,12 +4,25 @@ body{
 	color: white;
 }
 
-a {
-	color: skyblue;
-	text-decoration: none;
+header {
+	position: sticky;
+	top: 0;
+	
+	background-color:  #131824;
 }
-a:hover {
-	color: lightblue;
+header ul {
+	padding: 10px;
+	text-align: center;
+	list-style-type: none;
+}
+header li {
+	display: inline;
+	margin-right: 10px;
+}
+
+main {
+	width: 50%;
+	margin: 0 auto;
 }
 
 footer {
@@ -19,54 +32,24 @@ footer {
 
 	background-color:  #131824;
 }
-
 footer p {
 	padding: 10px;
-}
-
-header {
-	position: sticky;
-	top: 0;
-
-	background-color:  #131824;
-}
-
-main {
-	width: 50%;
-	margin: 0 auto;
-}
-
-header ul {
-	padding: 10px;
-	text-align: center;
-	list-style-type: none;
-}
-
-header li {
-	display: inline;
-	margin-right: 10px;
-}
-
-footer p {
 	text-align: center;
 }
+
+
+
 
 h1 {
 	font-size: 2em;
 }
 
-
-
-h1::before {
-	content: "# ";
+a {
+	color: skyblue;
+	text-decoration: none;
 }
-
-h2::before {
-	content: "## ";
-}
-
-h3::before {
-	content: "### ";
+a:hover {
+	color: lightblue;
 }
 
 .mini {
@@ -78,4 +61,42 @@ h3::before {
   	height: 1em;
   	object-fit: contain;
   	overflow: hidden;
+}
+
+
+/* Markdown styles (by me) */
+
+h1::before {
+	content: "# ";
+}
+h2::before {
+	content: "## ";
+}
+h3::before {
+	content: "### ";
+}
+
+/* Italic text */
+i::before, i::after, em::before, em::after {
+	content: "*";
+}
+
+/* Bold text */
+b::before, b::after, strong::before, strong::after {
+	content: "**";
+}
+
+/* Deleted text */
+s::before, s::after, del::before, del::after {
+	content: "~~";
+}
+
+/* Highlighted text */
+mark::before, mark::after {
+	content: "==";
+}
+
+/* List style */
+li {
+	list-style-type: '- ';
 }
