@@ -26,13 +26,6 @@ main {
 }
 
 footer {
-	position: sticky;
-	bottom: 0;
-	width: 100%;
-
-	background-color:  #131824;
-}
-footer p {
 	padding: 10px;
 	text-align: center;
 }
@@ -55,6 +48,12 @@ a {
 }
 a:hover {
 	color: lightblue;
+}
+
+.site-button {
+	background-color: #131824;
+	color: white;
+	padding: 5px;
 }
 
 .mini {
