@@ -8,4 +8,4 @@ I've also added nowPlaying.js (by [@aristada](https://github.com/aristada)) to f
 
 At the moment, I'm also part of two webrings: [FediRing](https://fediring.net/), because I also have a Mastodon account, and [🕸💍 – An IndieWeb Webring](https://xn--sr8hvo.ws/) because I also use IndieWeb and IndieAuth
 
-To visit my website, go to [gicorada.is-a.dev](https://gicorada.is-a.dev), or [gicorada.com](https://gicorada.com) (not online at the moment, but probably before September 2024)
+To visit my website, go to [gicorada.com](https://gicorada.com)
